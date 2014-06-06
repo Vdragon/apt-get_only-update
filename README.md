@@ -7,7 +7,7 @@
 [ppa - apt-get update only for a specific repository - Ask Ubuntu](http://askubuntu.com/questions/65245/apt-get-update-only-for-a-specific-repository)
 
 ## 作者<br />Authors
-Ｖ字龍與其他貢獻者
+[Ｖ字龍](mailto:pika1021@gmail.com)與其他貢獻者
 
 ## 授權條款<br />License
 GPL 3.0 或是其更近期的任一版本
