@@ -62,7 +62,12 @@ function main() {
 		printErrorParameterNumber
 		exit 1
 	else
-		apt-get update -o Dir::Etc::sourcelist="sources.list.d/$(basename ${PROGRAM_ARGUMENT_LIST})" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+		local list_filename=$(basename "${PROGRAM_ARGUMENT_LIST}")
+		if [ "sources.list" = "${list_filename}" ]; then
+			apt-get update -o Dir::Etc::sourcelist="${list_filename}" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+		else
+			apt-get update -o Dir::Etc::sourcelist="sources.list.d/$(basename ${PROGRAM_ARGUMENT_LIST})" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+		fi
 		exit $?
 	fi
 }
