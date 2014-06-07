@@ -1,0 +1,70 @@
+#!/bin/bash
+# 		宣告執行 script 程式用的殼程式(shell)
+################## Header block ##################
+# Script程式名稱
+# Script Name
+# 	
+# 著作權宣告
+# Copyright Declaration
+# 	Ｖ字龍(Vdragon) <pika1021@gmail.com> (c) 2012
+# 授權條款宣告
+# License Declaration
+# 	GNU Lesser General Public License version 3.0 or later
+# 	http://www.gnu.org/licenses/lgpl.html
+# 傳回值定義
+# Return Value Definition
+# 	0
+# 		正常結束
+# 已知問題
+# Known Issues
+# 	Known issues is now tracked on GitHub
+# 	
+# 修訂紀錄
+# Changelog
+# 	Changelog is now tracked using Git repostiory commit log
+# 	
+############## Header block ended ##############
+
+######## Included files ########
+
+######## Included files ended ########
+
+######## File scope variable definitions ########
+# idea from http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming/
+readonly PROGRAM_NAME="$(basename $0)"
+readonly PROGRAM_DIRECTORY="$(readlink -m $(dirname $0))"
+readonly PROGRAM_ARGUMENT_LIST="$@"
+readonly PROGRAM_ARGUMENT_NUMBER_ORIGINAL=$#
+
+######## File scope variable definitions ended ########
+
+######## Program ########
+function printUsage(){
+	printf "Usage:\n"
+	printf "	${PROGRAM_NAME}\n"
+	printf "	${PROGRAM_NAME} <source.list file>\n"
+	return
+}
+
+function printErrorParameterNumber(){
+	printf "Error: too many parameters!\n"
+	printUsage
+	return
+}
+
+# main function, program entry point
+# idea from http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming/
+function main() {
+	if [ ${PROGRAM_ARGUMENT_NUMBER_ORIGINAL} -eq 0 ]; then
+		printUsage
+		exit 0
+	elif [ ${PROGRAM_ARGUMENT_NUMBER_ORIGINAL} -ge 2 ]; then
+		printErrorParameterNumber
+		exit 1
+	else
+		apt-get update -o Dir::Etc::sourcelist="sources.list.d/$(basename ${PROGRAM_ARGUMENT_LIST})" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+		exit $?
+	fi
+}
+main
+######## Program ended ########
