@@ -22,8 +22,8 @@ Just run `make uninstall` command in the terminal in the project's root director
 `$ sudo apt-get_only-update <APT source.list file>`
 
 ## 感謝<br />Credits
-此作法最早自下列由 [Treviño](http://askubuntu.com/users/7788/trevino) 所發表的問題得知  
-This method is initially known from the question published by [Treviño](http://askubuntu.com/users/7788/trevino).  
+本專案靈感來自下列由 [Treviño](http://askubuntu.com/users/7788/trevino) 所發表的問題
+This project is inspired by the question published by [Treviño](http://askubuntu.com/users/7788/trevino).  
 [ppa - apt-get update only for a specific repository - Ask Ubuntu](http://askubuntu.com/questions/65245/apt-get-update-only-for-a-specific-repository)
 
 ## 作者<br />Authors
