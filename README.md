@@ -3,6 +3,11 @@
 這是讓 `apt-get update` 命令*只*更新使用者指定的 sources.list 軟體來源清單的快取資料的程式。通常 Ubuntu 都會在幕後自動更新全軟體來源的快取資料，因次當我們臨時新增一個新的軟體來源時最好跳過所有其他軟體來源快取資料的更新，直接更新那一個軟體來源就好了，這樣就可以節省許多寶貴的時間與網路流量，以及減少 APT 被鎖定無法安裝／移除任何軟體包的時間。
 This is for making `apt-get update` command *only* update user-specified sources.list softwawre source list cache.  Usually Ubuntu will update cache data of all software sources in the background automatically, thus when we add a new software source we better skip update process of all other software sources.  This can reduce much administrator's time and network usage, and reduce the time that APT is locked from install/reduce any package.
 
+## 軟體下載<br />Software download
+您可以下載釋出的軟體於  
+You may download software releases at
+[https://github.com/Vdragon/apt-get_onlyupdate/releases](https://github.com/Vdragon/apt-get_only-update/releases)
+
 ## 如何安裝？<br />How to install?
 在終端機內於專案根目錄下以 root 身份執行 `make install` 即可安裝
 Just run `make install` command in the terminal in the project's root directory to install apt-get_only-update
