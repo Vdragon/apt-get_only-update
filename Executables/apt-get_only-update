@@ -46,28 +46,18 @@ function printUsage(){
 	return
 }
 
-function printErrorParameterNumber(){
-	printf "Error: too many parameters!\n"
-	printUsage
-	return
-}
-
 # main function, program entry point
 # idea from http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming/
 function main() {
 	if [ ${PROGRAM_ARGUMENT_NUMBER_ORIGINAL} -eq 0 ]; then
 		printUsage
 		exit 0
-	elif [ ${PROGRAM_ARGUMENT_NUMBER_ORIGINAL} -ge 2 ]; then
-		printErrorParameterNumber
-		exit 1
 	else
-		local list_filename=$(basename "${PROGRAM_ARGUMENT_LIST}")
-		if [ "sources.list" = "${list_filename}" ]; then
-			apt-get update -o Dir::Etc::sourcelist="${list_filename}" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
-		else
-			apt-get update -o Dir::Etc::sourcelist="sources.list.d/$(basename ${PROGRAM_ARGUMENT_LIST})" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
-		fi
+		local sourcelist_list="${PROGRAM_ARGUMENT_LIST}"
+		local sourcelist
+		for sourcelist in ${sourcelist_list}; do
+			apt-get update -o Dir::Etc::sourcelist="${sourcelist}" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+		done
 		exit $?
 	fi
 }

@@ -17,9 +17,9 @@ Just run `make install` command in the terminal in the project's root directory 
 Just run `make uninstall` command in the terminal in the project's root directory to remove apt-get_only-update
 
 ## 命令語法<br />Command syntax
-`# apt-get_only-update <APT source.list file>`
+`# apt-get_only-update <APT source.list file> ...`
 
-`$ sudo apt-get_only-update <APT source.list file>`
+`$ sudo apt-get_only-update <APT source.list file> ...`
 
 ## 感謝<br />Credits
 本專案靈感來自下列由 [Treviño](http://askubuntu.com/users/7788/trevino) 所發表的問題
