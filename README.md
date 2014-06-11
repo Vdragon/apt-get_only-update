@@ -8,6 +8,12 @@ This is for making `apt-get update` command *only* update user-specified sources
 You may download software releases at  
 [https://github.com/Vdragon/apt-get_onlyupdate/releases](https://github.com/Vdragon/apt-get_only-update/releases)
 
+## 軟體依賴關係<br />Software dependency
+* GNU Bash 殼程式  
+  GNU Bash shell
+* 所有支援 Dir::Etc::sourcelist apt.conf 設定的 `apt-get` 命令版本  
+  All versions of `apt-get` command that support Dir::Etc::sourcelist apt.conf setting
+
 ## 如何安裝？<br />How to install?
 在終端機內於專案根目錄下以 root 身份執行 `make install` 即可安裝  
 Just run `make install` command in the terminal in the project's root directory to install apt-get_only-update
