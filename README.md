@@ -6,7 +6,7 @@ This is for making `apt-get update` command *only* update user-specified sources
 ## 軟體下載<br />Software download
 您可以下載釋出的軟體於  
 You may download software releases at  
-[https://github.com/Vdragon/apt-get_onlyupdate/releases](https://github.com/Vdragon/apt-get_only-update/releases)
+[https://github.com/Vdragon/apt-get_only-update/releases](https://github.com/Vdragon/apt-get_only-update/releases)
 
 ## 軟體依賴關係<br />Software dependency
 * GNU Bash 殼程式  
