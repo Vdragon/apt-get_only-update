@@ -23,7 +23,7 @@ Just run `make install` command as root in the terminal in the project's root di
 
 ## 如何移除軟體？<br />How to remove software?
 在終端機內於專案根目錄下以 root 身份執行 `make uninstall` 即可移除 apt-get_only-update  
-Just run `make uninstall` command in the terminal in the project's root directory to remove apt-get_only-update
+Just run `make uninstall` command as root in the terminal in the project's root directory to remove apt-get_only-update
 
 ## 命令語法<br />Command syntax
 `# apt-get_only-update <APT source.list file> ...`
