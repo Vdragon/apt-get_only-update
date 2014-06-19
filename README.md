@@ -16,7 +16,7 @@ You may download software releases at
 
 ## 如何安裝？<br />How to install?
 在終端機內於專案根目錄下以 root 身份執行 `make install` 即可安裝  
-Just run `make install` command in the terminal in the project's root directory to install apt-get_only-update
+Just run `make install` command as root in the terminal in the project's root directory to install apt-get_only-update
 
 ## 如何移除軟體？<br />How to remove software?
 在終端機內於專案根目錄下以 root 身份執行 `make uninstall` 即可移除 apt-get_only-update  
