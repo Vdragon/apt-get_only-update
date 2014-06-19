@@ -3,7 +3,7 @@
 ################## Header block ##################
 # Script程式名稱
 # Script Name
-# 	
+# 	Only update user-specified APT sources.list
 # 著作權宣告
 # Copyright Declaration
 # 	Ｖ字龍(Vdragon) <pika1021@gmail.com> (c) 2014
