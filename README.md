@@ -9,6 +9,9 @@ You may download software releases at
 [https://github.com/Vdragon/apt-get_only-update/releases](https://github.com/Vdragon/apt-get_only-update/releases)
 
 ## 軟體依賴關係<br />Software dependency
+本軟體依賴下列軟體才能正常運作：  
+This software depends on following softwares for normal operations:
+
 * GNU Bash 殼程式  
   GNU Bash shell
 * 所有支援 Dir::Etc::sourcelist apt.conf 設定的 `apt-get` 命令版本  
