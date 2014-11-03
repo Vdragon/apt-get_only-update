@@ -6,7 +6,7 @@
 # 	
 # 著作權宣告
 # Copyright Declaration
-# 	Ｖ字龍(Vdragon) <pika1021@gmail.com> (c) 2012
+# 	Ｖ字龍(Vdragon) <Vdragon.Taiwan@gmail.com> (c) 2012, 2014
 # 授權條款宣告
 # License Declaration
 # 	GNU Lesser General Public License version 3.0 or later
@@ -46,20 +46,15 @@ function printUsage(){
 	return
 }
 
-# main function, program entry point
-# idea from http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming/
-function main() {
-	if [ ${PROGRAM_ARGUMENT_NUMBER_ORIGINAL} -eq 0 ]; then
-		printUsage
-		exit 0
-	else
-		local sourcelist_list="${PROGRAM_ARGUMENT_LIST}"
-		local sourcelist
-		for sourcelist in ${sourcelist_list}; do
-			apt-get update -o Dir::Etc::sourcelist="${sourcelist}" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
-		done
-		exit $?
-	fi
-}
+if [ ${PROGRAM_ARGUMENT_NUMBER_ORIGINAL} -eq 0 ]; then
+	printUsage
+	exit 0
+else
+	while (( $# )); do
+		apt-get update -o Dir::Etc::sourcelist="$1" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+		shift
+	done
+	exit $?
+fi
 main
 ######## Program ended ########
