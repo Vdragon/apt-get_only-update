@@ -4,6 +4,7 @@
 # Script程式名稱
 # Script Name
 # 	apt-get_only-update
+# 	Only update user-specified APT sources.list
 # 著作權宣告
 # Copyright Declaration
 # 	Ｖ字龍(Vdragon) <Vdragon.Taiwan@gmail.com> (c) 2012, 2014
